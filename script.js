@@ -24,6 +24,11 @@ addProductButton.addEventListener("click", function(){
     let productname = productNameInput.value
     let productprice = parseFloat(productPriceInput.value)
     let li = document.createElement("li")
-    li.textContent = `${productname} - $${productprice.toFixed(2)}`
+    let removebutton = document.createElement("button")
+    removebutton.textContent = "Remove"
+    li.textContent = `${productname} - $${productprice.toFixed(2)} `
+    li.appendChild(removebutton)
     cart.appendChild(li)
+    
+
 })
