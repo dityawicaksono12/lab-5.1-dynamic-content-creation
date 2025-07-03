@@ -27,8 +27,10 @@ addProductButton.addEventListener("click", function(){
     let removebutton = document.createElement("button")
     removebutton.textContent = "Remove"
     li.textContent = `${productname} - $${productprice.toFixed(2)} `
+    li.dataset.price = productprice
     li.appendChild(removebutton)
     cart.appendChild(li)
+    updateTotalPrice(productprice)
     
     removebutton.addEventListener("click", removeItem)
 
