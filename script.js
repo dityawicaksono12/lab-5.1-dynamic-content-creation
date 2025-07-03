@@ -21,8 +21,17 @@ function removeItem(event) {
 }
 
 addProductButton.addEventListener("click", function(){
-    let productname = productNameInput.value
+    let productname = productNameInput.value.trim()
     let productprice = parseFloat(productPriceInput.value)
+    if (productname === ""){
+        alert("Product name is invalid.")
+        return
+    }
+    if (productprice <= 0|| isNaN(productprice)){
+        alert("Product price is invalid. Please enter a value greater than zero.")
+        return
+    }
+
     let li = document.createElement("li")
     let removebutton = document.createElement("button")
     removebutton.textContent = "Remove"
