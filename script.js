@@ -30,5 +30,6 @@ addProductButton.addEventListener("click", function(){
     li.appendChild(removebutton)
     cart.appendChild(li)
     
+    removebutton.addEventListener("click", removeItem)
 
 })
