@@ -27,7 +27,7 @@ addProductButton.addEventListener("click", function(){
         alert("Product name is invalid.")
         return
     }
-    if (productprice <= 0|| isNaN(productprice)){
+    if (productprice <= 0|| !productprice){
         alert("Product price is invalid. Please enter a value greater than zero.")
         return
     }
@@ -36,7 +36,7 @@ addProductButton.addEventListener("click", function(){
     let removebutton = document.createElement("button")
     removebutton.textContent = "Remove"
     li.textContent = `${productname} - $${productprice.toFixed(2)} `
-    li.dataset.price = productprice
+    li.setAttribute("data-price", productprice)
     li.appendChild(removebutton)
     cart.appendChild(li)
     updateTotalPrice(productprice)
